@@ -1,0 +1,35 @@
+# Ignore babel configuration file
+
+babel.config.js
+
+
+
+# Ignore node_modules directory
+
+node_modules/
+
+
+
+# Ignore package lock file
+
+package-lock.json
+
+
+
+# Ignore package.json if necessary
+
+package.json
+
+
+
+#Ignore eslint configuration file
+
+.eslintrc.js
+
+#Ignore all test files
+
+
+*main.js
+
+#Ignore utils
+utils.js
