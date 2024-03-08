@@ -33,3 +33,6 @@ package.json
 
 #Ignore utils
 utils.js
+
+#Ignore yarn
+yarn.lock
