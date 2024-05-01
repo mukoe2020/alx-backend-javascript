@@ -1,25 +1,36 @@
-const assert = require('assert');
-const calculateNumber = require('./0-calcul')
+nst assert = require('assert');
+const calculateNumber = require('./0-calcul');
 
-describe("Testing for the rounded summation", () => {
-    it('Round and add two positive numbers correct', () => {
-        const Result = calculateNumber(4.3, 5.7);
-        assert.equal(Result, 10);
-    });
-    it('Round and add two positive numbers', () => {
-        const Result = calculateNumber(-3.6, -6.6);
-        assert.strictEqual(Result, -11);
-    });
-    it('Round one positive and negative and adds them', () => {
-        const Result = calculateNumber(-3.6, 6.6);
-        assert.strictEqual(Result, 3);
-    })
-    it('Round 0 and one positive number', () => {
-        const Result = calculateNumber(0, 4);
-        assert.strictEqual(Result, 4)
-    });
-    it('Round 0 and one negative number', () => {
-        const Result = calculateNumber(0, -4);
-        assert.strictEqual(Result, -4);
-    });
-})
+describe('calculateNumber', () => {
+  it('floating point whole numbers', () => {
+    assert.strictEqual(calculateNumber(1.0, 2.0), 3);
+  });
+
+  it('rounding down b\'s floating point fractional number', () => {
+    assert.strictEqual(calculateNumber(1.0, 2.4), 3);
+  });
+
+  it('rounding down a and b\'s floating point fractional number', () => {
+    assert.strictEqual(calculateNumber(1.4, 2.4), 3);
+  });
+
+  it('rounding down a\'s floating point fractional number', () => {
+    assert.strictEqual(calculateNumber(1.4, 2.0), 3);
+  });
+
+  it('rounding up b\'s floating point fractional numbers', () => {
+    assert.strictEqual(calculateNumber(1.0, 2.5), 4);
+  });
+
+  it('rounding up a and b\'s floating point fractional numbers', () => {
+    assert.strictEqual(calculateNumber(2.6, 2.5), 6);
+  });
+
+  it('rounding up a\'s floating point fractional numbers', () => {
+    assert.strictEqual(calculateNumber(2.6, 2.0), 5);
+  });
+
+  it('rounding down a and b floating point fractional numbers with trailing 9\'s', () => {
+    assert.strictEqual(calculateNumber(2.499999, 3.499999), 5);
+  });
+});
